@@ -1,0 +1,10 @@
+---
+
+- name: This is a chocolatey example
+  hosts: win
+  gather_facts: no
+  tasks:
+  - win_chocolatey:
+      name: procexp
+      state: present
+      # state: absent

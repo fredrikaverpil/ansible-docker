@@ -1,0 +1,6 @@
+- win_updates:
+    category_names: criticalupdates
+  register: wuout
+
+- win_reboot:
+  when: wuout.reboot_required
