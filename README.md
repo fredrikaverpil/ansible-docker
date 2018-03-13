@@ -1,20 +1,29 @@
 
 ## Build image
+
+```bash
 cd deploy
 docker build . -t fredrikaverpil/ansible:1.0
+```
 
 ## Start container, add hosts
+
+```bash
 cd deploy
 docker run --detach --restart="always" --name="ansible" --hostname ansible-master --volume ${PWD}/../config/ansible:/ansible fredrikaverpil/ansible:1.0
 docker exec -ti ansible bash
 ln -sf /ansible/ansible.cfg /etc/ansible/ansible.cfg
 ln -sf /ansible/hosts /etc/ansible/hosts
+```
+
 
 ## Stop and remove container, image
+
+```bash
 docker stop ansible
 docker rm -v ansible
 docker rmi fredrikaverpil/ansible:1.0
-
+```
 
 
 ## Setting up SSH authorized keys
