@@ -1,3 +1,5 @@
+# ansible-docker
+
 
 ## Build image
 
@@ -67,7 +69,7 @@ ansible all -a "/bin/echo hello"
 In the `/etc/ansible/hosts`, specify e.g:
 
 ```
-[all:vars]
+[farm:vars]
 ansible_user=vagrant
 ansible_pass=vagrant
 ansible_connection=ssh
@@ -76,16 +78,17 @@ ansible_connection=ssh
 
 ## Run playbook examples
 
-```
+```bash
+# Linux
 ansible-playbook /ansible/playbooks/helloworld.yml
 ```
 
 
-# NEXT UP
+# Windows support
 
 Windows:
-  * Download script (note, this is a web page): https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
-  * Run: powershell.exe -noprofile -executionpolicy bypass -file .\ConfigureRemotingForAnsible.ps1
-  * Run: ansible win -m win_ping
-  * Run: ansible-playbook choco.yml  (works!)
+  * Download script (note, link is a web page): https://raw.githubusercontent.com/ansible/ansible/devel/examples/scripts/ConfigureRemotingForAnsible.ps1
+  * Run: `powershell.exe -noprofile -executionpolicy bypass -file .\ConfigureRemotingForAnsible.ps1`
+  * Run: `ansible win -m win_ping`
+  * Run: `ansible-playbook choco.yml`  (works!)
   * Look through AnsibleFest London 2017, Ansible & Windows: https://www.youtube.com/watch?v=U0SQ-3-QDzw
