@@ -1,16 +1,14 @@
 [farm]
-192.168.0.101
-192.168.0.102
-192.168.0.103
+192.168.0.[101:107]
 
 
 [win]
-192.168.0.119
+192.168.0.67
 
 
 [farm:vars]
-ansible_user=vagrant
-ansible_pass=vagrant
+# ansible_user=vagrant
+# ansible_pass=vagrant!
 ansible_connection=ssh
 
 
